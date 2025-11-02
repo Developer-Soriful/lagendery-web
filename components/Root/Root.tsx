@@ -1,7 +1,6 @@
 import { Images } from "../../src/assets"
 import HowItWorks from "./HowItWorks"
 import ChooseUs from "./ChooseUs"
-import { useAuth } from "../../authentication/UseAuth"
 const Root = () => {
     return (
         <div>
