@@ -1,6 +1,6 @@
 
-import React, { useState, FormEvent } from 'react';
-import { MdLocationOn, MdSend } from 'react-icons/md';
+import React, { useState } from 'react';
+import type { FormEvent } from 'react';
 import ConnectWithUsSection from './ConnectWithUsSection';
 
 // Tailwind Custom Colors (approximations from the image)

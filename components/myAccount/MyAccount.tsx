@@ -1,7 +1,7 @@
 // src/components/MyAccount.tsx
 
 import React from 'react';
-import { MdEdit, MdLogout, MdAdd, MdCheckCircle, MdAccessTime, MdLocalShipping } from 'react-icons/md';
+import { MdEdit, MdLogout, MdAdd } from 'react-icons/md';
 import { useAuth } from '../../authentication/UseAuth';
 
 // --- TYPE DEFINITIONS ---
@@ -166,7 +166,7 @@ const MyAccount: React.FC = () => {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-100">
-                                {mockOrders.map((order, index) => (
+                                {mockOrders.map((order) => (
                                     <tr key={order.id} className="hover:bg-gray-50">
                                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{order.id}</td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{order.serviceType}</td>

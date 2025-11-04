@@ -1,6 +1,6 @@
 // src/components/AuthCard.tsx
-
-import React, { useState, FormEvent } from 'react';
+import React, { useState } from 'react';
+import type { FormEvent } from 'react';
 import { useAuth } from '../../authentication/UseAuth';
 import { useNavigate } from 'react-router';
 
@@ -32,7 +32,7 @@ const AuthCard: React.FC = () => {
     // this is for navigate 
     const navigate = useNavigate()
     // --- Handlers ---
-    const handleLoginSubmit = (e: FormEvent) => {
+    const handleLoginSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         login(loginEmail, loginPassword)
         console.log('Login attempt:', { loginEmail, loginPassword, rememberMe });
@@ -40,7 +40,7 @@ const AuthCard: React.FC = () => {
         navigate('/')
     };
 
-    const handleRegisterSubmit = (e: FormEvent) => {
+    const handleRegisterSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (registerPassword !== registerConfirmPassword) {
             alert("Passwords do not match!");
