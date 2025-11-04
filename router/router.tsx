@@ -20,6 +20,7 @@ export const router = createBrowserRouter([
             { path: '/contact-us', element: <ContactUs /> },
             { path: '/my-account', element: <ProtectedRoute><MyAccount /></ProtectedRoute> },
             { path: '/frequently', element: <ProtectedRoute> <Frequently /></ProtectedRoute> },
+            { path: '/faq', element: <Frequently /> },
         ]
     },
     {

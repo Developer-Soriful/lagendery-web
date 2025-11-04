@@ -78,6 +78,17 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 100%;
+    background: #235235;
+}
+
+.stepImg2 {
+    display: flex;
+    width: 64px;
+    height: 64px;
+    padding: 18px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
     background: #00AFAA;
 }
 
@@ -152,4 +163,49 @@ body {
     gap: 8px;
     font-size: 14px;
     color: #fff;
+}
+
+/* this is for stress-free with LaundryGo. section button */
+.signup_now_btn {
+    display: flex;
+    width: 199.656px;
+    padding: 15px 32px 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 9999px;
+    background: #00AFAA;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15.3px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    /* 183.007% */
+}
+
+/* Tablet and up */
+@media (max-width: 768px) {
+    .card_style {
+        display: flex;
+        padding: 32px 24px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card_style2 {
+        display: flex;
+        padding: 32px 24px;
+        justify-content: center;
+        align-items: center;
+        background: #F3F8F4;
+    }
+}
+
+@media (min-width: 1024px) {
+    .element {
+        width: 33.33%;
+        font-size: 18px;
+    }
 }

@@ -4,6 +4,7 @@ import React from 'react';
 import { Images } from '../../src/assets';
 import OurProcess from "./OurProcess"
 import OurValues from "./OurValues"
+import OurTeam from './OurTeam';
 const About: React.FC = () => {
     return (
         <div>
@@ -71,6 +72,10 @@ const About: React.FC = () => {
             {/* this is for our values section */}
             <div className='card_style2'>
                 <OurValues />
+            </div>
+            {/* this for our team */}
+            <div className='card_style'>
+                <OurTeam />
             </div>
         </div>
     );
