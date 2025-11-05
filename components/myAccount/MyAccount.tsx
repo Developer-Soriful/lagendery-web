@@ -58,10 +58,12 @@ const getStatusClasses = (status: OrderStatus) => {
 };
 
 const MyAccount: React.FC = () => {
-    const { logout } = useAuth()
+    const authContext = useAuth();
     // this is for handle logout function
     function handleLogout() {
-        logout()
+        if (authContext) {
+            authContext.logout();
+        }
     }
     return (
         <div className="card_style2" style={{ backgroundColor: CARD_BG_LIGHT }}>

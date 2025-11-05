@@ -28,13 +28,15 @@ const AuthCard: React.FC = () => {
     const [registerPassword, setRegisterPassword] = useState('');
     const [registerConfirmPassword, setRegisterConfirmPassword] = useState('');
     // this is from auth provider
-    const { login } = useAuth()
+    const authContext = useAuth();
     // this is for navigate 
     const navigate = useNavigate()
     // --- Handlers ---
     const handleLoginSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        login(loginEmail, loginPassword)
+        if (authContext) {
+            authContext.login(loginEmail, loginPassword);
+        }
         console.log('Login attempt:', { loginEmail, loginPassword, rememberMe });
         alert('Login Successfull!');
         navigate('/')

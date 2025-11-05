@@ -1,13 +1,16 @@
-import React, { PropsWithChildren, ReactNode } from 'react'
-import { useAuth } from '../authentication/UseAuth'
-import { Navigate } from 'react-router'
+import React from 'react';
+import type { PropsWithChildren } from 'react';
+import { Navigate } from 'react-router';
+import { useAuth } from '../authentication/UseAuth';
 
 const ProtectedRoute: React.FC<PropsWithChildren> = ({ children }) => {
-    const { user } = useAuth()
-    if (!user) {
-        return <Navigate to={'/sign-in'} replace />
-    }
-    return <>{children}</>
-}
+    const authContext = useAuth();
 
-export default ProtectedRoute
+    if (!authContext || !authContext.user) {
+        return <Navigate to="/login" replace />;
+    }
+
+    return <>{children}</>;
+};
+
+export default ProtectedRoute;
