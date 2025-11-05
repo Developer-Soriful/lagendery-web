@@ -1,5 +1,5 @@
 import React, { type PropsWithChildren, useState } from 'react';
-import { AuthContext } from './AuthContext';
+import { AuthContext, type AuthContextType } from './AuthContext';
 
 const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(() => {
@@ -18,6 +18,7 @@ const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
         localStorage.removeItem('password');
         setIsLoggedIn(false);
     };
+
     const getUser = () => {
         const email = localStorage.getItem("email");
         const password = localStorage.getItem("password");
@@ -28,8 +29,10 @@ const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
         return null;
     };
-    const user = getUser()
-    const info = {
+
+    const user = getUser();
+
+    const info: AuthContextType = {
         isLoggedIn,
         login,
         logout,
@@ -37,9 +40,9 @@ const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={info as any}>
+        <AuthContext.Provider value={info}>
             {children}
-        </AuthContext.Provider >
+        </AuthContext.Provider>
     );
 };
 
