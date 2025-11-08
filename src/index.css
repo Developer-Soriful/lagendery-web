@@ -185,6 +185,67 @@ body {
     /* 183.007% */
 }
 
+/* this is for root layout first impression section */
+.root_heading {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 51px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    /* 117.647% */
+}
+
+.root_text {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20.4px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    /* 156.863% */
+}
+
+/* this is for root hero button */
+.hero_button1 {
+    display: flex;
+    height: 64px;
+    padding: 19px 32px 24px 32px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #FFF;
+    color: #006C76;
+}
+
+.hero_button2 {
+    display: flex;
+    height: 64px;
+    padding: 21px 34px 22px 34px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    color: #FFF;
+    border: 2px solid #FFF;
+    background: rgba(0, 0, 0, 0.00);
+}
+
+/* this is for userlogin and signup button */
+.login_sign_btn {
+    display: flex;
+    padding: 4px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 24px;
+    color: #E6E6E6;
+    background: var(--brand, #006C76);
+}
+
 /* Tablet and up */
 @media (max-width: 768px) {
     .card_style {

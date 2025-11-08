@@ -7,7 +7,7 @@ const ProtectedRoute: React.FC<PropsWithChildren> = ({ children }) => {
     const authContext = useAuth();
 
     if (!authContext || !authContext.user) {
-        return <Navigate to="/sign-in" replace />;
+        return <Navigate to="/" replace />;
     }
 
     return <>{children}</>;

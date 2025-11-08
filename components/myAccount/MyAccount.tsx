@@ -3,6 +3,7 @@
 import React from 'react';
 import { MdEdit, MdLogout, MdAdd } from 'react-icons/md';
 import { useAuth } from '../../authentication/UseAuth';
+import { useNavigate } from 'react-router';
 
 // --- TYPE DEFINITIONS ---
 type OrderStatus = 'Delivered' | 'In Progress' | 'Scheduled';
@@ -59,10 +60,12 @@ const getStatusClasses = (status: OrderStatus) => {
 
 const MyAccount: React.FC = () => {
     const authContext = useAuth();
+    const router = useNavigate()
     // this is for handle logout function
     function handleLogout() {
         if (authContext) {
             authContext.logout();
+            router('/')
         }
     }
     return (
@@ -77,7 +80,7 @@ const MyAccount: React.FC = () => {
                     </div>
                     <div className="flex justify-between gap-4 max-md:w-full">
                         <button
-                            className="py-2.5 px-6 rounded-lg text-white font-semibold flex items-center space-x-2 transition-opacity hover:opacity-90"
+                            className="py-2.5 px-6 cursor-pointer rounded-lg text-white font-semibold flex items-center space-x-2 transition-opacity hover:opacity-90"
                             style={{ backgroundColor: PRIMARY_TEAL }}
                         >
                             <MdAdd size={20} />
@@ -85,7 +88,7 @@ const MyAccount: React.FC = () => {
                         </button>
                         <button
                             onClick={handleLogout}
-                            className="py-2.5 px-4 rounded-lg text-gray-700 border border-gray-300 font-semibold flex items-center space-x-2 bg-white transition-colors hover:bg-gray-50"
+                            className="py-2.5 px-4 cursor-pointer rounded-lg text-gray-700 border border-gray-300 font-semibold flex items-center space-x-2 bg-white transition-colors hover:bg-gray-50"
                         >
                             <MdLogout size={20} />
                             <span>Logout</span>

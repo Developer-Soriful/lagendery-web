@@ -139,7 +139,7 @@ const AuthCard: React.FC = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen p-4" style={{ backgroundColor: SECTION_BG_LIGHT }}>
+        <div className="flex items-center justify-center min-h-screen p-4" >
             <div
                 className="w-full max-w-md bg-white rounded-lg shadow-xl overflow-hidden"
                 style={{ border: `1px solid ${BORDER_LIGHT_GREY}` }}

@@ -7,19 +7,24 @@ import ContactUs from "../components/contactUs/ContactUs"
 import MyAccount from "../components/myAccount/MyAccount";
 import AuthCard from "../components/authPage/AuthCard";
 import Frequently from "../components/Frequently/Frequently";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "../router/ProtectedRoute"
 export const router = createBrowserRouter([
     // this is for routing bro
     {
         path: "/",
         Component: App,
         children: [
-            { index: true, element: <ProtectedRoute> <Root /> </ProtectedRoute> },
+            { index: true, element: <Root /> },
             { path: '/about', element: <About /> },
-            { path: '/packages', element: <ProtectedRoute><Packages /></ProtectedRoute> },
+            { path: '/packages', element: <Packages /> },
             { path: '/contact-us', element: <ContactUs /> },
-            { path: '/my-account', element: <ProtectedRoute><MyAccount /></ProtectedRoute> },
-            { path: '/frequently', element: <ProtectedRoute> <Frequently /></ProtectedRoute> },
+            {
+                path: '/my-account',
+                element:
+                    <ProtectedRoute>
+                        <MyAccount />
+                    </ProtectedRoute>
+            },
             { path: '/faq', element: <Frequently /> },
         ]
     },

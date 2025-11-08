@@ -1,12 +1,33 @@
 import { Images } from "../../src/assets"
 import HowItWorks from "./HowItWorks"
 import ChooseUs from "./ChooseUs"
+import AuthCard from "../authPage/AuthCard"
+import { useAuth } from "../../authentication/UseAuth"
 const Root = () => {
+    const context = useAuth()
+    const user = context?.user
+    console.log(user)
     return (
         <div>
             {/* this is for root hero img */}
-            <div>
-                <img className="w-full lg:h-[858px]" src={Images.hero_img} alt="" />
+            <div className="relative bg-linear-to-r from-[#004d54] to-[#017b77] h-[600px] flex justify-center items-center flex-col gap-[34px]">
+                {
+                    !user && <div className="absolute w-full -top-35">
+                        <AuthCard />
+                    </div>
+                }
+                <div className="flex flex-col gap-[19px]">
+                    <div className="root_heading">
+                        <h1>Reliable Laundry Pick-Up & </h1>
+                        <h1>Delivery at Your Doorstep</h1>
+                    </div>
+                    <p className="root_text">Schedule, track, and relax — we'll handle your laundry with care.</p>
+                </div>
+                <div className="flex justify-center items-center gap-4">
+                    <button className="hero_button1">Book Now</button>
+                    <button className="hero_button2">View Packages</button>
+                </div>
+                {/* <img className="w-full lg:h-[858px]" src={Images.hero_img} alt="" /> */}
             </div>
             {/* this is for how it work section */}
             <div className="card_style">
