@@ -29,7 +29,7 @@ const NavBar: React.FC = () => {
     };
 
     return (
-        <div className="bg-[#F3F8F4] relative">
+        <div className="bg-[#F3F8F4] relative z-30">
             {/* Desktop & Mobile Menu Button */}
             <div className="flex justify-between items-center h-[64px] px-4 md:px-[62.5px] py-4">
                 <div>
