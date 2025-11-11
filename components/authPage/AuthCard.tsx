@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router';
 
 // --- STYLING CONSTANTS (Pixel Perfect Colors) ---
 const PRIMARY_TEAL = '#006C76'; // Dark Teal (Active button BG, main button BG)
-const SECTION_BG_LIGHT = '#F8FAF8'; // Light greenish background for the page/container
 const BORDER_LIGHT_GREY = '#F3F4F6'; // Light grey border/inactive background
 
 // --- TYPE DEFINITIONS ---

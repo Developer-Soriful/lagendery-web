@@ -1,4 +1,3 @@
-import { Link, NavLink } from "react-router";
 import { Images } from "../../src/assets";
 import { useState } from "react";
 import { useAuth } from "../../authentication/UseAuth";

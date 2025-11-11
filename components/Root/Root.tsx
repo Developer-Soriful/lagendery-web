@@ -1,4 +1,3 @@
-import { Images } from "../../src/assets"
 import HowItWorks from "./HowItWorks"
 import ChooseUs from "./ChooseUs"
 import AuthCard from "../authPage/AuthCard"
