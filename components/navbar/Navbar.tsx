@@ -2,6 +2,7 @@ import { Images } from "../../src/assets";
 import { useState } from "react";
 import { useAuth } from "../../authentication/UseAuth";
 import { LuUserRound } from "react-icons/lu";
+import { NavLink } from "react-router";
 
 const NavBar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
