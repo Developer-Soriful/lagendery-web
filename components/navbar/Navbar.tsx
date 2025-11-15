@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useAuth } from "../../authentication/UseAuth";
 import { LuUserRound } from "react-icons/lu";
 import { NavLink } from "react-router";
+import AuthCard from "../authPage/AuthCard";
 
 const NavBar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,6 @@ const NavBar: React.FC = () => {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const closeMenu = () => setIsMenuOpen(false);
 
-    // Handle opening modal for My Account / Login
     const handleOpenModal = () => {
         closeMenu();
         setOpenModal(true);
@@ -96,19 +96,6 @@ const NavBar: React.FC = () => {
                                     </button>
                                 );
                             }
-
-                            return (
-                                <NavLink
-                                    key={data.id}
-                                    to={data.href}
-                                    onClick={closeMenu}
-                                    className={({ isActive }) =>
-                                        `flex items-center gap-2 py-2 ${isActive ? "text-[#006C76]" : ""}`
-                                    }
-                                >
-                                    {data.label}
-                                </NavLink>
-                            );
                         })}
                         {!user && (
                             <button onClick={handleOpenModal} className="login_sign_btn">
@@ -125,18 +112,8 @@ const NavBar: React.FC = () => {
                     className="fixed inset-0 bg-black/50 flex justify-center items-center z-[999]"
                     onClick={() => setOpenModal(false)}
                 >
-                    <div
-                        className="bg-white p-6 rounded w-[90%] max-w-[400px]"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <h2 className="text-xl font-semibold mb-4">Login / Signup</h2>
-                        <p>Put your form or modal content here.</p>
-                        <button
-                            className="mt-4 px-4 py-2 bg-[#006C76] text-white rounded"
-                            onClick={() => setOpenModal(false)}
-                        >
-                            Close
-                        </button>
+                    <div className="lg:w-[30%]" onClick={(e) => e.stopPropagation()}>
+                        <AuthCard />
                     </div>
                 </div>
             )}

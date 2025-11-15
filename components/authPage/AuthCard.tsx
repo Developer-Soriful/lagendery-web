@@ -12,7 +12,7 @@ const BORDER_LIGHT_GREY = '#F3F4F6'; // Light grey border/inactive background
 type AuthMode = 'login' | 'register';
 
 const AuthCard: React.FC = () => {
-    const [mode, setMode] = useState<AuthMode>('login'); // Default to Login view
+    const [mode, setMode] = useState<AuthMode>('login');
 
     // --- Login Form State ---
     const [loginEmail, setLoginEmail] = useState('');
@@ -74,7 +74,7 @@ const AuthCard: React.FC = () => {
     const renderFormContent = () => {
         if (mode === 'login') {
             return (
-                <form onSubmit={handleLoginSubmit} className="space-y-6">
+                <form onSubmit={handleLoginSubmit} className="flex flex-col gap-6 w-full">
                     <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">Welcome Back</h2>
 
                     {renderInput('Email', 'login-email', 'email', loginEmail, setLoginEmail, 'Your email')}
@@ -138,7 +138,7 @@ const AuthCard: React.FC = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen p-4" >
+        <div className="flex items-center justify-center p-4 w-full" >
             <div
                 className="w-full max-w-md bg-white rounded-lg shadow-xl overflow-hidden"
                 style={{ border: `1px solid ${BORDER_LIGHT_GREY}` }}

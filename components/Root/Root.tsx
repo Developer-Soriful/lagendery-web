@@ -9,12 +9,7 @@ const Root = () => {
     return (
         <div>
             {/* this is for root hero img */}
-            <div className="relative bg-linear-to-r from-[#004d54] to-[#017b77] h-[600px] flex justify-center items-center flex-col gap-[34px]">
-                {
-                    !user && <div className="absolute w-full -top-35">
-                        <AuthCard />
-                    </div>
-                }
+            <div className="relative bg-linear-to-r from-[#004d54] to-[#017b77] flex justify-center items-center flex-col gap-[34px] py-[164px] **text-white**">
                 <div className="flex flex-col gap-[19px]">
                     <div className="root_heading">
                         <h1>Reliable Laundry Pick-Up & </h1>
@@ -25,6 +20,11 @@ const Root = () => {
                 <div className="flex justify-center items-center gap-4">
                     <button className="hero_button1">Book Now</button>
                     <button className="hero_button2">View Packages</button>
+                </div>
+                <div className="w-full">
+                    {
+                        !user && < AuthCard />
+                    }
                 </div>
                 {/* <img className="w-full lg:h-[858px]" src={Images.hero_img} alt="" /> */}
             </div>
