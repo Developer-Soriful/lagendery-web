@@ -21,11 +21,6 @@ const Root = () => {
                     <button className="hero_button1">Book Now</button>
                     <button className="hero_button2">View Packages</button>
                 </div>
-                <div className="w-full">
-                    {
-                        !user && < AuthCard />
-                    }
-                </div>
                 {/* <img className="w-full lg:h-[858px]" src={Images.hero_img} alt="" /> */}
             </div>
             {/* this is for how it work section */}

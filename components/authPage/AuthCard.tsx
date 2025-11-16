@@ -11,7 +11,11 @@ const BORDER_LIGHT_GREY = '#F3F4F6'; // Light grey border/inactive background
 // --- TYPE DEFINITIONS ---
 type AuthMode = 'login' | 'register';
 
-const AuthCard: React.FC = () => {
+interface AuthCardProps {
+    setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const AuthCard: React.FC<AuthCardProps> = ({ setOpenModal }) => {
     const [mode, setMode] = useState<AuthMode>('login');
 
     // --- Login Form State ---
@@ -39,6 +43,7 @@ const AuthCard: React.FC = () => {
         console.log('Login attempt:', { loginEmail, loginPassword, rememberMe });
         alert('Login Successfull!');
         navigate('/')
+        setOpenModal(false)
     };
 
     const handleRegisterSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -71,7 +76,7 @@ const AuthCard: React.FC = () => {
     );
 
     // --- Conditional Form Rendering ---
-    const renderFormContent = () => {
+    const renderFormContent = ({ setOpenModal }: { setOpenModal: (openModal: boolean) => void }) => {
         if (mode === 'login') {
             return (
                 <form onSubmit={handleLoginSubmit} className="flex flex-col gap-6 w-full">
@@ -185,7 +190,7 @@ const AuthCard: React.FC = () => {
 
                 {/* --- Form Content --- */}
                 <div className="p-8">
-                    {renderFormContent()}
+                    {renderFormContent({ setOpenModal })}
                 </div>
 
             </div>

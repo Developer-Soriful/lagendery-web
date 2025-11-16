@@ -113,7 +113,7 @@ const NavBar: React.FC = () => {
                     onClick={() => setOpenModal(false)}
                 >
                     <div className="lg:w-[30%]" onClick={(e) => e.stopPropagation()}>
-                        <AuthCard />
+                        <AuthCard setOpenModal={setOpenModal} />
                     </div>
                 </div>
             )}

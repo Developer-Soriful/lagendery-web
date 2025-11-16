@@ -246,6 +246,39 @@ body {
     background: var(--brand, #006C76);
 }
 
+
+/* this is for confirmation modal style */
+.confirmation_modal {
+    color: var(--Main-Color, #006C76);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* this is for Schedule Pickup & Delivery */
+.schedule_pickup {
+    color: #1F2937;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* this is for confirm order card style */
+.confirm_order_card {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 25px;
+    border: 2px solid var(--Main-Color, #006C76);
+}
+
 /* Tablet and up */
 @media (max-width: 768px) {
     .card_style {
