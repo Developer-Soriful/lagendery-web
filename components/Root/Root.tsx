@@ -1,6 +1,5 @@
 import HowItWorks from "./HowItWorks"
 import ChooseUs from "./ChooseUs"
-import AuthCard from "../authPage/AuthCard"
 import { useAuth } from "../../authentication/UseAuth"
 const Root = () => {
     const context = useAuth()

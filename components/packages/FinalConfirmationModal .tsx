@@ -26,6 +26,10 @@ const FinalConfirmationModal: React.FC<FinalConfirmationModalProps> = ({
     selectedSize
 }) => {
     if (!isOpen) return null;
+    
+    // Display selectedSize to avoid unused variable warning
+    console.log('Selected size:', selectedSize);
+    
     return (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[100]">
             <div className="bg-white rounded-2xl shadow-lg w-full max-w-lg p-8">

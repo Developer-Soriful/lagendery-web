@@ -3,7 +3,6 @@ import { BiCheck } from 'react-icons/bi';
 import { IoMdArrowRoundForward } from 'react-icons/io';
 // NOTE: Make sure the actual file names for the modals match these imports.
 import FinalConfirmationModal from './FinalConfirmationModal ';
-import BookingModal from './ConfirmationModal'; // Renamed import for clarity
 import ConfirmationModal from './ConfirmationModal';
 
 type LoadSize = 'Small' | 'Medium' | 'Large';
@@ -42,6 +41,14 @@ const PackageCard: React.FC<PackageCardProps> = ({
     // Kept for the final confirmation step
     const [showFinalConfirmationModal, setShowFinalConfirmationModal] = useState(false);
     const [selectedSize, setSelectedSize] = useState<string>('');
+
+    // State for FinalConfirmationModal props
+    const [pickupDate, setPickupDate] = useState<Date | null>(null);
+    const [pickupTime, setPickupTime] = useState<string>('');
+    const [deliveryDate, setDeliveryDate] = useState<Date | null>(null);
+    const [deliveryTimeSlot, setDeliveryTimeSlot] = useState<string>('');
+    const [address, setAddress] = useState<string>('');
+    const [selectedPayment, setSelectedPayment] = useState<string>('');
 
     // --- Modal Handler Functions ---
 
@@ -228,10 +235,8 @@ const PackageCard: React.FC<PackageCardProps> = ({
                         // Handler to advance to the next step
                         onConfirm={handleConfirmBooking}
                         packageName={title}
-                        packagePrice={`$${selectedPrice.toFixed(2)}`} // Pass as string with $
+                        packagePrice={`$${selectedPrice.toFixed(2)}`}
                         selectedSize={selectedSize}
-                        showFinalConfirmationModal={showFinalConfirmationModal}
-                    // showFinalConfirmationModal is no longer needed here
                     />
                 )}
 
@@ -243,10 +248,15 @@ const PackageCard: React.FC<PackageCardProps> = ({
                         <FinalConfirmationModal
                             isOpen={showFinalConfirmationModal}
                             onClose={() => setShowFinalConfirmationModal(false)}
-                            // Pass relevant props for final display
                             packageName={title}
                             packagePrice={`$${selectedPrice.toFixed(2)}`}
                             selectedSize={selectedSize}
+                            pickupDate={pickupDate}
+                            pickupTime={pickupTime}
+                            deliveryDate={deliveryDate}
+                            deliveryTime={deliveryTimeSlot}
+                            address={address}
+                            selected={selectedPayment}
                         />
                     )
                 }

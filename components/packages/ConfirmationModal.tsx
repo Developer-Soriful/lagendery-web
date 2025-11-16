@@ -1,6 +1,4 @@
-'use client'
-
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { BsCreditCard2Back, BsWallet2 } from 'react-icons/bs'
 import DatePicker from 'react-datepicker'
