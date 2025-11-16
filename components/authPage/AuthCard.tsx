@@ -76,7 +76,7 @@ const AuthCard: React.FC<AuthCardProps> = ({ setOpenModal }) => {
     );
 
     // --- Conditional Form Rendering ---
-    const renderFormContent = ({ setOpenModal }: { setOpenModal?: (openModal: boolean) => void }) => {
+    const renderFormContent = () => {
         if (mode === 'login') {
             return (
                 <form onSubmit={handleLoginSubmit} className="flex flex-col gap-6 w-full">
@@ -190,7 +190,7 @@ const AuthCard: React.FC<AuthCardProps> = ({ setOpenModal }) => {
 
                 {/* --- Form Content --- */}
                 <div className="p-8">
-                    {renderFormContent({ setOpenModal })}
+                    {renderFormContent()}
                 </div>
 
             </div>

@@ -43,12 +43,12 @@ const PackageCard: React.FC<PackageCardProps> = ({
     const [selectedSize, setSelectedSize] = useState<string>('');
 
     // State for FinalConfirmationModal props
-    const [pickupDate, setPickupDate] = useState<Date | null>(null);
-    const [pickupTime, setPickupTime] = useState<string>('');
-    const [deliveryDate, setDeliveryDate] = useState<Date | null>(null);
-    const [deliveryTimeSlot, setDeliveryTimeSlot] = useState<string>('');
-    const [address, setAddress] = useState<string>('');
-    const [selectedPayment, setSelectedPayment] = useState<string>('');
+    const [pickupDate, _setPickupDate] = useState<Date | null>(new Date());
+    const [pickupTime, _setPickupTime] = useState<string>('10:00 AM');
+    const [deliveryDate, _setDeliveryDate] = useState<Date | null>(new Date());
+    const [deliveryTimeSlot, _setDeliveryTimeSlot] = useState<string>('2:00 PM');
+    const [address, _setAddress] = useState<string>('123 Main St, City, State');
+    const [selectedPayment, _setSelectedPayment] = useState<string>('stripe');
 
     // --- Modal Handler Functions ---
 
