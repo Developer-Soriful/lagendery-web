@@ -112,7 +112,7 @@ const NavBar: React.FC = () => {
                     className="fixed inset-0 bg-black/50 flex justify-center items-center z-[999]"
                     onClick={() => setOpenModal(false)}
                 >
-                    <div className="lg:w-[30%]" onClick={(e) => e.stopPropagation()}>
+                    <div className="w-full lg:w-[40%]" onClick={(e) => e.stopPropagation()}>
                         <AuthCard setOpenModal={setOpenModal} />
                     </div>
                 </div>

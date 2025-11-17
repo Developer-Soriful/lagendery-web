@@ -8,6 +8,7 @@ import MyAccount from "../components/myAccount/MyAccount";
 import AuthCard from "../components/authPage/AuthCard";
 import Frequently from "../components/Frequently/Frequently";
 import ProtectedRoute from "../router/ProtectedRoute"
+import Forgot from "../components/forgot-pass/Forgot";
 export const router = createBrowserRouter([
     // this is for routing bro
     {
@@ -30,5 +31,8 @@ export const router = createBrowserRouter([
     },
     {
         path: "/sign-in", element: <AuthCard />
+    },
+    {
+        path: "forgot-password", element: <Forgot />
     }
 ])

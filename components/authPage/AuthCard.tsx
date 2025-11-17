@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import type { FormEvent } from 'react';
 import { useAuth } from '../../authentication/UseAuth';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 // --- STYLING CONSTANTS (Pixel Perfect Colors) ---
 const PRIMARY_TEAL = '#006C76'; // Dark Teal (Active button BG, main button BG)
@@ -98,9 +98,9 @@ const AuthCard: React.FC<AuthCardProps> = ({ setOpenModal }) => {
                             />
                             <label htmlFor="rememberMe" className="text-gray-700">Remember me</label>
                         </div>
-                        <a href="#" className="text-[12px] text-[#006C76] hover:underline">
+                        <Link to="/forgot-password" className="text-[12px] text-[#006C76] hover:underline">
                             Forgot Password?
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Login Button */}
@@ -145,7 +145,7 @@ const AuthCard: React.FC<AuthCardProps> = ({ setOpenModal }) => {
     return (
         <div className="flex items-center justify-center p-4 w-full" >
             <div
-                className="w-full max-w-md bg-white rounded-lg shadow-xl overflow-hidden"
+                className="w-full lg:w-md bg-white rounded-lg shadow-xl overflow-hidden"
                 style={{ border: `1px solid ${BORDER_LIGHT_GREY}` }}
             >
                 {/* --- Toggle Buttons (Login/Register) --- */}
